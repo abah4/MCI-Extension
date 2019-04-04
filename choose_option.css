@@ -1,0 +1,27 @@
+html, body {
+  width: 300px;
+}
+
+.Button1 {
+  width: 100%;
+  padding: 4px;
+  font-size: 1.5em;
+  text-align: center;
+  cursor: pointer;
+}
+
+.Button2 {
+  width: 100%;
+  padding: 4px;
+  font-size: 1.5em;
+  text-align: center;
+  cursor: pointer;
+}
+
+.Button1:hover {
+  background-color: #FF0000;
+}
+
+.Button2:hover {
+  background-color: #00FFFF;
+}
