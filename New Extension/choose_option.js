@@ -1,20 +1,15 @@
 
+console.log("Adding event listener");
 document.addEventListener("click", function(e) {
-  if (!e.target.classList.contains("Button1")) {
-    return;
+  console.log("Executing event listener");
+  if (e.target.classList.contains("Button2")) {
+    var enables = browser.tabs.executeScript({file: "Enable.js"});
+    console.log("links should be enabled");
   }
 
-var disables = browser.tabs.executeScript({file: "Disable.js"});
-
-});
-
-
-document.addEventListener("click", function(e) {
-  if (!e.target.classList.contains("Button2")) {
-    return;
+  if (e.target.classList.contains("Button1")) {
+    console.log("attempting to disable links");
+    var disables = browser.tabs.executeScript({file: "Disable.js"});
+    console.log("links should be disabled");
   }
-
-  var enables = browser.tabs.executeScript({file: "Enable.js"});
-
-
 });
