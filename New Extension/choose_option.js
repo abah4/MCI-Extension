@@ -7,8 +7,6 @@ document.addEventListener("click", function(e) {
     var disables = browser.tabs.executeScript({file: "Disable.js"});
     console.log('links should be disabled');
 
-    var css = "body { border: 5px solid red; }";
-    var insertingCSS = browser.tabs.insertCSS({code: css});
   }
 
   if (e.target.classList.contains("Button2")) {
