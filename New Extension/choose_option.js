@@ -6,7 +6,6 @@ document.addEventListener("click", function(e) {
     console.log("attempting to disable links");
     var disables = browser.tabs.executeScript({file: "Disable.js"});
     console.log('links should be disabled');
-
   }
 
   if (e.target.classList.contains("Button2")) {
