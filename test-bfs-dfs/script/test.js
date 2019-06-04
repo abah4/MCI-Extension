@@ -1,24 +1,24 @@
-var links = document.getElementsByTagName("div");
+var links = document.getElementsByTagName("a");
 var root_node;
 
 for (var i = 0; i < links.length; i++) {
-  var myid = links[i].getAttribute("id");
-  console.log("ID is: " + myid);
+  var href = links[i].getAttribute("rel");
+  console.log("Link is: " + href);
 }
 
 console.log("start BFS");
 
-var filter = new RegExp("irst-parent");
+var filter = new RegExp("umbc");
 
 for (var i = 0; i < links.length; i++) {
-  var result = links[i].id.search(filter);
-  console.log("position: " + result + " " + links[i].id);
+  var result = links[i].href.search(filter);
+  console.log("position: " + result + " " + links[i].href);
   if (result >= 0) {
     root_node = links[i].parentNode;
   }
 }
 
-console.log("Our parent is: " + root_node["id"]);
+console.log("Our parent is: " + root_node["href"]);
 
 var queue = [];
 
