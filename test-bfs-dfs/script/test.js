@@ -1,6 +1,27 @@
 var links = document.getElementsByTagName("a");
 var root_node;
 
+/*var links = [];
+var root_node = document.querySelectorAll("div");
+
+console.log("We found this many things: " + root_node.length);
+console.log("It has the following attributes: " + root_node.classList);
+
+console.log("Our parent has ID: " + root_node["id"]);
+console.log("Our parent has class: " + root_node["class"]);
+console.log("Our parent is: " + root_node);
+Array.prototype.slice.call(root_node.attributes).forEach(function(item) {
+	console.log(item.name + ': '+ item.value);
+});
+
+var parent_node = root_node.parentNode;
+console.log("Our parent has ID: " + parent_node["id"]);
+console.log("Our parent has class: " + parent_node["class"]);
+console.log("Our parent is: " + parent_node);
+Array.prototype.slice.call(parent_node.attributes).forEach(function(item) {
+	console.log(item.name + ': '+ item.value);
+});*/
+
 for (var i = 0; i < links.length; i++) {
   var href = links[i].getAttribute("rel");
   console.log("Link is: " + href);
@@ -18,7 +39,12 @@ for (var i = 0; i < links.length; i++) {
   }
 }
 
-console.log("Our parent is: " + root_node["href"]);
+console.log("Our parent has ID: " + root_node["id"]);
+console.log("Our parent has class: " + root_node["class"]);
+console.log("Our parent is: " + root_node);
+Array.prototype.slice.call(root_node.attributes).forEach(function(item) {
+  console.log(item.name + ": " + item.value);
+});
 
 var queue = [];
 

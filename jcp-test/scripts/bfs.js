@@ -12,7 +12,7 @@ function filter_links(links) {
     console.log("position: " + result + " " + links[i].text);
     if (result >= 0) {
       matching.push(links[i]);
-      console.log("Adding: " + links[i].text);
+      console.log("adding: " + links[i].text);
     }
   }
 
