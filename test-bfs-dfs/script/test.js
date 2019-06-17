@@ -7,13 +7,6 @@ var root_node = document.querySelectorAll("div");
 console.log("We found this many things: " + root_node.length);
 console.log("It has the following attributes: " + root_node.classList);
 
-console.log("Our parent has ID: " + root_node["id"]);
-console.log("Our parent has class: " + root_node["class"]);
-console.log("Our parent is: " + root_node);
-Array.prototype.slice.call(root_node.attributes).forEach(function(item) {
-	console.log(item.name + ': '+ item.value);
-});
-
 var parent_node = root_node.parentNode;
 console.log("Our parent has ID: " + parent_node["id"]);
 console.log("Our parent has class: " + parent_node["class"]);
@@ -42,9 +35,11 @@ for (var i = 0; i < links.length; i++) {
 console.log("Our parent has ID: " + root_node["id"]);
 console.log("Our parent has class: " + root_node["class"]);
 console.log("Our parent is: " + root_node);
+console.log("Attributes inside parent: ")
 Array.prototype.slice.call(root_node.attributes).forEach(function(item) {
   console.log(item.name + ": " + item.value);
 });
+
 
 var queue = [];
 
@@ -58,6 +53,7 @@ var count = 0;
 while (current != undefined) {
   for (let c of current.children) {
     queue.push(c);
+
   }
   queue = queue.flat();
 
@@ -67,6 +63,18 @@ while (current != undefined) {
   for (let o of queue) {
     console.log(o);
   }
+
+  if (current.hasAttributes()) {
+      var attrs = current.attributes;
+      for (var i = 0; i < attrs.length; i++) {
+      console.log("Name: " + attrs[i].name + " Value: " + attrs[i].value);
+      }
+
+  }   else {
+       result.value = "No attributes to show";
+       console.log("No attributes to show");
+     }
+
   console.log("End queue");
   current = queue.pop(); // depth-first
   // current = queue.shift(); // breadth-first
