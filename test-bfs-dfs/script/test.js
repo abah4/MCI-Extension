@@ -35,11 +35,10 @@ for (var i = 0; i < links.length; i++) {
 console.log("Our parent has ID: " + root_node["id"]);
 console.log("Our parent has class: " + root_node["class"]);
 console.log("Our parent is: " + root_node);
-console.log("Attributes inside parent: ")
+console.log("Attributes inside parent: ");
 Array.prototype.slice.call(root_node.attributes).forEach(function(item) {
   console.log(item.name + ": " + item.value);
 });
-
 
 var queue = [];
 
@@ -53,7 +52,6 @@ var count = 0;
 while (current != undefined) {
   for (let c of current.children) {
     queue.push(c);
-
   }
   queue = queue.flat();
 
@@ -65,16 +63,36 @@ while (current != undefined) {
   }
 
   if (current.hasAttributes()) {
-      var attrs = current.attributes;
-      for (var i = 0; i < attrs.length; i++) {
+    var attrs = current.attributes;
+    for (var i = 0; i < attrs.length; i++) {
       console.log("Name: " + attrs[i].name + " Value: " + attrs[i].value);
-      }
-
-  }   else {
-       console.log("No attributes to show");
-     }
+    }
+  } else {
+    console.log("No attributes to show");
+  }
 
   console.log("End queue");
   current = queue.pop(); // depth-first
   // current = queue.shift(); // breadth-first
 }
+
+
+
+// Starting code for the search for our candidate div
+var list = document.querySelectorAll("div[dir='ltr']");
+var arr_list = Array.from(list.entries());
+console.log("Another count: " + arr_list.length);
+
+function remove_low_dir_divs(d) {
+  console.log(d);
+  console.log("elements: " + d.childElementCount);
+  return v.childElementCount > 2;
+}
+
+arr_list.filter(remove_low_dir_divs);
+
+console.log(arr_list);
+console.log("Post-filter count: " + arr_list.length);
+
+
+console.log("Done!");
