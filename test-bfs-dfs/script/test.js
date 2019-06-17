@@ -71,7 +71,6 @@ while (current != undefined) {
       }
 
   }   else {
-       result.value = "No attributes to show";
        console.log("No attributes to show");
      }
 
