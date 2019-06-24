@@ -76,23 +76,29 @@ while (current != undefined) {
   // current = queue.shift(); // breadth-first
 }
 
-
-
 // Starting code for the search for our candidate div
 var list = document.querySelectorAll("div[dir='ltr']");
 var arr_list = Array.from(list.entries());
 console.log("Pre-filter Count: " + arr_list.length);
 
 function remove_low_dir_divs(d) {
-  console.log(d);
-  console.log("elements: " + d.childElementCount);
-  return (d.childElementCount > 2);
+  console.log("Examining: " + d + " of type " + d[1].nodeName);
+  console.log("elements: " + d[1].childElementCount);
+
+  console.log(
+    "********************************************************************************"
+  );
+  console.log(d[1].innerHTML);
+  console.log(
+    "********************************************************************************"
+  );
+
+  return d[1].childElementCount > 2;
 }
 
-arr_list.filter(remove_low_dir_divs);
+filtered = arr_list.filter(remove_low_dir_divs);
 
-console.log(arr_list);
-console.log("Post-filter count: " + arr_list.length);
-
+console.log(filtered);
+console.log("Post-filter count: " + filtered.length);
 
 console.log("Done!");
