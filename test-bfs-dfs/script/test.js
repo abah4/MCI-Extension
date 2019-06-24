@@ -81,12 +81,12 @@ while (current != undefined) {
 // Starting code for the search for our candidate div
 var list = document.querySelectorAll("div[dir='ltr']");
 var arr_list = Array.from(list.entries());
-console.log("Another count: " + arr_list.length);
+console.log("Pre-filter Count: " + arr_list.length);
 
 function remove_low_dir_divs(d) {
   console.log(d);
   console.log("elements: " + d.childElementCount);
-  return v.childElementCount > 2;
+  return (d.childElementCount > 2);
 }
 
 arr_list.filter(remove_low_dir_divs);
