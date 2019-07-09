@@ -102,3 +102,9 @@ console.log(filtered);
 console.log("Post-filter count: " + filtered.length);
 
 console.log("Done!");
+
+
+// Code for finding our candidate div by using links
+var els = document.querySelectorAll('a[href*="umbc"]');
+console.log(els)
+console.log(els.offsetParent);
