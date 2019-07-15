@@ -103,7 +103,8 @@ console.log("Post-filter count: " + filtered.length);
 
 console.log("Done!");
 
-// Code for finding our candidate div by using links
-var els = document.querySelectorAll('a[href*="umbc"]');
-console.log(els);
-console.log(els[0].offsetParent);
+//Finding matching candidate parent node from two links
+var el = document.querySelectorAll('a[href*="umbc"]');
+var arr_list = Array.from(el.entries());
+var r1 = el.closest('a[href*="northeastern"]');
+console.log(r1);
