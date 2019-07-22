@@ -126,9 +126,21 @@ function commonAncestor(node1, node2) {
   var parents1 = parents(node1);
   var parents2 = parents(node2);
 
-  if (parents1[0] != parents2[0]) throw "No common ancestor!";
+  if (parents1[0] != parents2[0]) {
+   console.log("No common ancestor!");
+  }
 
   for (var i = 0; i < parents1.length; i++) {
     if (parents1[i] != parents2[i]) return parents1[i - 1];
   }
+
 }
+
+var r1 = document.querySelectorAll('a[href*="https://hangouts.google.com/"]');
+var r2 = document.querySelectorAll('a[href*="https://drive.google.com/u/0/settings/storage?hl=en&utm_medium=onramp&utm_source=gmail"]');
+
+var commonParent = commonAncestor(r1[0],r2[0]);
+
+console.log(commonParent);
+
+console.log(parents(commonParent));
