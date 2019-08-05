@@ -33,33 +33,32 @@ var tree = parents(commonParent); //shown path of the node to the root
 
 console.log(tree);
 
-console.log("****************************************************")
-
-console.log(tree[2].previousElementSibling);
-console.log(tree[2].nextElementSibling);
-
 console.log("****************************************************");
 
 var getSiblings = function (elem) {
-	var siblings = [];
-  var parents = [];
+	var siblingsParents = [];
 
   for (; elem && elem !== document; elem = elem.parentNode ) {
-    parents.push(elem);
-  }
-  return parents;
 
-  var sibling = elem.firstChild;
-	for (; sibling; sibling = sibling.nextSibling) {
-	 if (sibling.nodeType !== 1 || sibling === elem) continue;
-	 siblings.push(sibling);
+    var sibling = elem.firstChild;
+	  for (; sibling; sibling = sibling.nextSibling) {
+	  if (sibling.nodeType !== 1 || sibling === elem) continue;
+	  siblingsParents.push(sibling);
+    }
   }
-	return siblings;
+  return siblingsParents;
 
 }
 
-var siblings = getSiblings(r1[1]);
+var array1 = getSiblings(r1[1]);
 console.log(siblings);
 
-var sib = getSiblings(r2[0]);
+var array2 = getSiblings(r2[0]);
 console.log(sib);
+
+console.log("****************************************************");
+//Matching results
+
+var result = array1.filter(value => array2.includes(value));
+
+console.log(result);
