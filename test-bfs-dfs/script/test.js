@@ -51,10 +51,10 @@ var getSiblings = function (elem) {
 }
 
 var array1 = getSiblings(r1[1]);
-console.log(siblings);
+console.log(array1);
 
 var array2 = getSiblings(r2[0]);
-console.log(sib);
+console.log(array2);
 
 console.log("****************************************************");
 //Matching results
