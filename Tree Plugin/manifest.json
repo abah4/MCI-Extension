@@ -9,6 +9,14 @@
     "32": "icons/page-32.png"
   },
 
+  "browser_action": {
+    "default_popup": "Tree.html",
+    "default_icon": {
+      "16": "icons/page-16.png",
+      "32": "icons/page-32.png"
+    }
+  },
+
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
