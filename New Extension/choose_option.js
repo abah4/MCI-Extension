@@ -13,9 +13,4 @@ document.addEventListener("click", function(e) {
     console.log('links should be enabled');
   }
 
-function filter(){
-  var filterValue = document.getElementById('form1').value;
-  console.log(filterValue);
-}
-
 });
